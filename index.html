@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover original stories across different genres.">
+  <title>StoryVerse | Discover Stories</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Story<span>Verse</span></a>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="#library">Library</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+          🌙
+        </button>
+        <a href="#library" class="nav-cta">Explore Books</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR NEXT FAVORITE STORY AWAITS</span>
+        <h1>Every book opens<br> a <span>new world.</span></h1>
+        <p>
+          Discover adventures, mysteries, romance, fantasy, and more.
+          Find a story that speaks to you and start reading today.
+        </p>
+        <a href="#library" class="btn btn-primary">Explore Library →</a>
+
+        <div class="hero-stats">
+          <div><strong id="bookCount">30</strong><span>Stories</span></div>
+          <div><strong>30+</strong><span>Authors</span></div>
+          <div><strong>10+</strong><span>Genres</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Featured book illustration">
+        <div class="floating-book book-back">DREAMS<br>BEYOND</div>
+        <div class="floating-book book-front">
+          <span class="cover-symbol">✦</span>
+          <small>A STORYVERSE ORIGINAL</small>
+          <h2>THE<br>LAST<br>STAR</h2>
+          <span class="cover-author">A TALE OF MAGIC</span>
+        </div>
+        <span class="hero-spark spark-one">✦</span>
+        <span class="hero-spark spark-two">✧</span>
+      </div>
+    </section>
+
+    <section class="library-section" id="library">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THE STORY COLLECTION</span>
+            <h2>Explore the Library</h2>
+            <p>Thirty stories. Different worlds. One chapter per book.</p>
+          </div>
+          <span class="result-count" id="resultCount">30 stories</span>
+        </div>
+
+        <div class="library-tools">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" id="searchInput"
+              placeholder="Search title, author, or genre..."
+              aria-label="Search books">
+          </label>
+
+          <label class="filter-label" for="genreFilter">Genre:</label>
+          <select id="genreFilter">
+            <option value="all">All Genres</option>
+          </select>
+
+          <button id="resetFilters" class="btn btn-outline">Reset</button>
+        </div>
+
+        <div class="genre-chips" id="genreChips" aria-label="Quick genre filters"></div>
+
+        <div class="book-grid" id="bookGrid">
+          <p class="loading-message">Loading stories...</p>
+        </div>
+        <p class="empty-message" id="emptyMessage" hidden>
+          No stories found. Try a different search or genre.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-card">
+        <div class="about-icon">✦</div>
+        <div>
+          <span class="eyebrow">ABOUT STORYVERSE</span>
+          <h2>A little reading goes a long way.</h2>
+          <p>
+            StoryVerse is a student-made digital storybook library.
+            Explore different genres, discover fictional worlds, and
+            enjoy a complete short story in a single chapter.
+          </p>
+        </div>
+        <a href="#library" class="btn btn-primary">Start Reading</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a href="index.html" class="logo">Story<span>Verse</span></a>
+      <p>Made for readers, dreamers, and storytellers.</p>
+      <p>© <span id="currentYear"></span> StoryVerse. Student project.</p>
+    </div>
+  </footer>
+
+  <dialog id="bookDialog" class="book-dialog">
+    <button id="closeDialog" class="dialog-close" aria-label="Close details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+</body>
+</html>
